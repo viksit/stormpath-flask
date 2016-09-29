@@ -94,7 +94,7 @@ def login():
     form = LoginForm()
     # If a user is already logged in, skip this page
     u = _get_user()
-    if u.is_authenticated():    
+    if u.is_authenticated:    
         return redirect(request.args.get('next') or current_app.config['STORMPATH_REDIRECT_URL'])
     # If we received a POST request with valid information, we'll continue
     # processing.
